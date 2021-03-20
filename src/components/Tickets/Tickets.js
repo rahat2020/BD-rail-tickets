@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     const classes = useStyles();
     const history = useHistory()
       const handleTicket = (bedType) => {
-          history.push(`/book/${bedType}`);
+          history.push(`/Destination/${bedType}`);
       }
     return (
       <Card style={{marginRight:'15x'}} className={classes.root}>
@@ -58,7 +58,6 @@ const useStyles = makeStyles((theme) => ({
           image={ticket.imgUrl}
           title="Paella dish"
         />
-        {/* <img src={`/images/${room.bedType}.png`} alt=""/> */}
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
             {ticket.description}
@@ -66,17 +65,10 @@ const useStyles = makeStyles((theme) => ({
         </CardContent>
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
-            {/* <LocalHotelIcon />: {room.bed}  */}
           </IconButton>
-
-          {/* <IconButton aria-label="share">
-            <WcIcon />: {ticket.capacity} 
-          </IconButton> */}
-
           <IconButton aria-label="prices">
             <AttachMoneyIcon />: {ticket.prices} 
           </IconButton>
-
           <Button onClick={() => handleTicket(ticket.bedType)} variant="contained" color="primary">
               Book
           </Button>
@@ -85,13 +77,3 @@ const useStyles = makeStyles((theme) => ({
     );
   }
   
-
-// const Tickets = () => {
-//     return (
-//         <div>
-//             <h2> this is Tickets</h2>
-//         </div>
-//     );
-// };
-
-// export default Tickets;

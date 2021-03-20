@@ -1,0 +1,59 @@
+.div-container {
+    background-color: green;
+    width: 353px;
+    padding: 40px;
+    margin: auto;
+    margin-top: 50px;
+}
+.div-container input {
+    width: 91%;
+    padding: 12px;
+    margin-top: 12px;
+    border: none;
+    background: #ddd;
+    border-radius: 10px;
+    outline: none;
+}
+
+input.submit {
+    width: 98%;
+    background: yellow;
+    color: black;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.login{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 17px;
+   
+}
+.login a {
+ text-decoration: none;
+ color: rgb(179, 255, 0);
+}
+.login span{
+    color:white ;
+}
+.googleSign{
+    border: 2px solid black;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+   
+    
+}
+.googleSign button {
+    font-size: 20px;
+    padding: 10px;
+    background-color: green;
+    border: none;
+}
+button:hover{
+    background-color: whitesmoke;
+    cursor: pointer;
+    font-weight: bolder;
+    border-radius: 5px;
+}
