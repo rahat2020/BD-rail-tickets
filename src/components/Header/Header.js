@@ -13,10 +13,10 @@ const Header = () => {
             <nav className="nav">
                 <ul>
                     <li>
-                        <Link to="/Home">Home</Link>
+                        <Link to="/home">Home</Link>
                     </li>
                     <li>
-                        <Link to="/">Book</Link>
+                        <Link to="/book">Book</Link>
                     </li>
                     <li>
                         <Link className="login-style" to="/login">Login</Link>

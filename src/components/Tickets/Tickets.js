@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     const classes = useStyles();
     const history = useHistory()
       const handleTicket = (bedType) => {
-          history.push(`/Destination/${bedType}`);
+          history.push(`/book/${bedType}`);
       }
     return (
       <Card style={{marginRight:'15x'}} className={classes.root}>

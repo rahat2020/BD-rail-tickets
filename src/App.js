@@ -9,7 +9,8 @@ import {
 import Home from './components/Home/Home';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
-import Destination from './components/Destination/Destination';
+import Book from './components/Book/Book';
+
 
 
 function App() {
@@ -24,8 +25,8 @@ function App() {
          <Route  path="/login">
             <Login/>
           </Route>
-          <Route path="/Destination:/bedType">
-            <Destination/>
+          <Route path="/book/:bedType">
+            <Book/>
          </Route>
          <Route exact path="/">
           <Home></Home>

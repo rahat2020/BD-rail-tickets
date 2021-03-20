@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-const Destination = () => {
+const Book = () => {
         const {bedType} = useParams();
         
     return (
@@ -14,4 +14,4 @@ const Destination = () => {
     );
 };
 
-export default Destination;
+export default Book;
