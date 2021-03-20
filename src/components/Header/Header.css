@@ -3,23 +3,25 @@
     padding: 0;
 }
 
+
 .header{
 
     height: 400px;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.logo {
+/* .logo {
     height: 50px;
     margin-left: 10px im !important;
     display: flex;
 
-}
+} */
 
 .nav{
-    margin-left: 200px;
+    margin-left: 350px;
 }
 
 .nav li{
@@ -27,10 +29,34 @@
     margin-left: 50px;
     
   }
+  .nav ul {
+      margin-bottom: 40px !important;
+  }
   
   .nav a{
     text-decoration: none;
     color: rgba(255, 255, 255, 0.877);
     font-weight: bold;
- 
+    font-size: 35px;
+  }
+
+  .logo-text{
+      display: flex;
+      margin-left: 150px;
+      font-size: 40px;
+      color: aliceblue;
+  }
+  .List-style{
+      margin-top: -50px;
+  }
+  .login-style{
+      /* border: 1px solid goldenrod; */
+      padding: 5px;
+      background-color: rgb(161, 151, 151);
+      border-radius: 15px;
+  }
+  .login-style:hover{
+      color: blueviolet;
+      background-color: aqua;
+      font-size: 60px;
   }

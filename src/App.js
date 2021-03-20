@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home';
 import Header from './components/Header/Header';
+import Login from './components/Login/Login';
+
 
 function App() {
   return (
@@ -18,12 +20,14 @@ function App() {
           <Route path="/Home">
               <Home></Home>
           </Route>
-          <Route path="/">
-              
+          <Route exact path="/">
+          <Home></Home>
           </Route>
-          <Route path="/Home">
-            
+
+          <Route  path="/login">
+            <Login/>
           </Route>
+
           <Route path="/Home">
              
           </Route>
