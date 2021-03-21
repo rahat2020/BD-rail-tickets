@@ -7,6 +7,7 @@ import { useState } from 'react';
 import {UserContext} from '../../App';
 import { useHistory, useLocation } from 'react-router';
 
+
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 } else {
@@ -15,7 +16,6 @@ if (!firebase.apps.length) {
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-
     const history = useHistory()
     const location = useLocation()
     let { from } = location.state || { from: { pathname: "/" } };
@@ -138,6 +138,8 @@ const Login = () => {
         }
         e.preventDefault();
     }
+
+  
     return (
         <div className="div-container wrapper">
             {
@@ -151,10 +153,10 @@ const Login = () => {
                 <br />
                 <input type="email" name="email" onBlur={handleBlur} placeholder="your email here" required />
                 <br />
-                <input type="password" name="password" onBlur={handleBlur} placeholder="your password here" required />
+                <input type="password"  name="password" onBlur={handleBlur}  placeholder="your password here" required />
                 <br />
                 {
-                    newUser && <input type="password" onBlur={handleBlur} placeholder="confirm password here" required />
+                    newUser && <input type="password" onBlur={handleBlur}  placeholder="confirm password here" required />
                 }
                 <br />
                 <input className="submit" type="submit" />
