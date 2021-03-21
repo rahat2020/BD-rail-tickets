@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Login.css';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import { useState } from 'react';
+import {UserContext} from '../../App';
+import { useHistory, useLocation } from 'react-router';
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
@@ -12,6 +14,12 @@ if (!firebase.apps.length) {
 }
 
 const Login = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const history = useHistory()
+    const location = useLocation()
+    let { from } = location.state || { from: { pathname: "/" } };
+
     const [newUser, setNewUser] = useState(false)
     const [user, setUser] = useState({
         isSignedIn: false,
@@ -33,6 +41,8 @@ const Login = () => {
                     photo: photoURL
                 }
                 setUser(signedInUser)
+                setLoggedInUser(signedInUser)
+                history.replace(from);
                 console.log(displayName, email, photoURL);
             })
             // console.log('sign in clicked');
@@ -90,6 +100,8 @@ const Login = () => {
                     newUserInfo.error = '';
                     newUserInfo.success = true;
                     setUser(newUserInfo);
+                    setLoggedInUser(newUserInfo);
+                    history.replace(from);
                     console.log(res)
 
                 })
@@ -128,24 +140,37 @@ const Login = () => {
     }
     return (
         <div className="div-container wrapper">
-            <h1> This is sign up page</h1>
-            <input type="checkbox" onChange={()=>setNewUser (!newUser)} name="newUser" id="" />
-            <label htmlFor="newUser">New User sign up</label>
+            {
+                newUser ? <h1> This is sign up page</h1> : <h1> This is Login page</h1>
+            }
+
             <form onSubmit={handleSubmit}>
                 {
-                    newUser && <input type="text" onBlur={handleBlur} onChange={() => setNewUser(!newUser)} placeholder="your name here" required />
+                    newUser && <input type="text" onBlur={handleBlur} placeholder="your name here" required />
                 }
                 <br />
                 <input type="email" name="email" onBlur={handleBlur} placeholder="your email here" required />
                 <br />
                 <input type="password" name="password" onBlur={handleBlur} placeholder="your password here" required />
                 <br />
-                <input type="password" onBlur={handleBlur} placeholder="confirm password here" required />
+                {
+                    newUser && <input type="password" onBlur={handleBlur} placeholder="confirm password here" required />
+                }
                 <br />
                 <input className="submit" type="submit" />
                 <br />
                 <div className="login">
-                    <a href="/SignIn"> Login here</a> <span>If you have an account</span>
+                    <p>
+                        {
+                            newUser ? 'Already have an account?' : 'Dont have an account?'
+
+                        }
+                        <span onClick={() => setNewUser(!newUser)} className="span-style">
+                            {
+                                newUser ?  ' login' : ' sign up'
+                            }
+                        </span>
+                    </p>
                 </div>
             </form>
             <div className="googleSign">

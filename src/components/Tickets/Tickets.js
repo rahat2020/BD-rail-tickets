@@ -8,7 +8,7 @@ import CardActions from '@material-ui/core/CardActions';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
@@ -39,11 +39,13 @@ const useStyles = makeStyles((theme) => ({
   export default function Tickets({ticket}){
     const classes = useStyles();
     const history = useHistory()
-      const handleTicket = (bedType) => {
-          history.push(`/book/${bedType}`);
-      }
+
+    const {ticketType} =ticket
+      // const handleTicket = (bedType) => {
+      //     history.push(`/book/${bedType}`);
+      // }
     return (
-      <Card style={{marginRight:'15x'}} className={classes.root}>
+      <Card style={{marginRight:'25x'}} className={classes.root}>
         <CardHeader
           avatar={
             <Avatar aria-label="recipe" className={classes.avatar}>
@@ -69,9 +71,12 @@ const useStyles = makeStyles((theme) => ({
           <IconButton aria-label="prices">
             <AttachMoneyIcon />: {ticket.prices} 
           </IconButton>
-          <Button onClick={() => handleTicket(ticket.bedType)} variant="contained" color="primary">
+          {/* <Button onClick={() => handleTicket(ticket.bedType)} variant="contained" color="primary">
               Book
-          </Button>
+          </Button> */}
+          <Link to={`/book/${ticketType}`}>
+            <Button variant="contained" color="primary"> Book </Button> 
+          </Link>
         </CardActions>
       </Card>
     );

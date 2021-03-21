@@ -1,4 +1,3 @@
-
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -10,12 +9,16 @@ import Home from './components/Home/Home';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import Book from './components/Book/Book';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import { createContext, useState } from 'react';
 
-
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
     <div className="App">
+      <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Header/>
         <Switch>
@@ -25,14 +28,15 @@ function App() {
          <Route  path="/login">
             <Login/>
           </Route>
-          <Route path="/book/:bedType">
+          <PrivateRoute path="/book/:ticket">
             <Book/>
-         </Route>
+         </PrivateRoute>
          <Route exact path="/">
           <Home></Home>
           </Route>
         </Switch>
       </Router>
+      </UserContext.Provider>
     </div>
   );
 }

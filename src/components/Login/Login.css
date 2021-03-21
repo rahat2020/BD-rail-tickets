@@ -57,3 +57,6 @@ button:hover{
     font-weight: bolder;
     border-radius: 5px;
 }
+.span-style, .submit{
+    cursor: pointer;
+}
