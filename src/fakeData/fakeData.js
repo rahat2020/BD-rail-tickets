@@ -7,8 +7,6 @@ const fakeData = [
         ticketType: 'first',
         description:'Checkout available seats, route information, fare information on real time basis with Esheba Platform.',
         prices:'35',
-        from:'dhaka',
-        To:'chittagong'
 
     },
     {
