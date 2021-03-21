@@ -19,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <p>show name: {loggedInUser.name}</p> 
       <Router>
         <Header/>
         <Switch>
