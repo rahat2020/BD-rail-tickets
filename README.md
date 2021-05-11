@@ -2,7 +2,7 @@
 
 my git repository link: # https://github.com/Porgramming-Hero-web-course/react-auth-rahat2020
 
-website live link:- # https://bd-rail-ticket.web.app/Home
+website live link:- # https://bd-rail-ticket.web.app
 
 
 here i have created a BD-railways website.
